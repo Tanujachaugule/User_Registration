@@ -18,6 +18,10 @@ public class UserRegistration {
         System.out.println("Enter Your Email ID");
         String emailID = scanner.next();
         userregistration.validEmail( emailID);
+        System.out.println();
+        System.out.println("Enter Your Mobile Number");
+        String mobileNo = scanner.next();
+        userregistration.validMobileFormat(mobileNo);
     }
     public void validFirstName(String firstName) {
         String pattern ="^[A-Z]{1}[ a-z]{2,25}$";
@@ -41,6 +45,14 @@ public class UserRegistration {
             System.out.println("Email ID is Valid");
         } else {
             System.out.println("Email ID is Invalid");
+        }
+    }
+    public void validMobileFormat(String mobileNo) {
+        String pattern = "((91){1})[ ]([98765]{1})([0-9]{9})$";
+        if(Pattern.matches(pattern, mobileNo)) {
+            System.out.println("Mobile Number  is Valid");
+        }else {
+            System.out.println("Mobile Number is Invalid");
         }
     }
 }
