@@ -30,6 +30,10 @@ public class UserRegistration {
         System.out.println("Enter Password");
         String Upppassword = scanner.next();
         userregistration.UppervalidPassword(Upppassword);
+        System.out.println();
+        System.out.println("Enter Password");
+        String specialpassword = scanner.next();
+        userregistration.SpecialCharPassword(specialpassword);
     }
     public void validFirstName(String firstName) {
         String pattern ="^[A-Z]{1}[ a-z]{2,25}$";
@@ -74,6 +78,14 @@ public class UserRegistration {
     public void UppervalidPassword(String Upppassword) {
         String pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$";
         if(Pattern.matches(pattern, Upppassword)) {
+            System.out.println("Password  is Valid");
+        }else {
+            System.out.println("Password is Invalid");
+        }
+    }
+    public void SpecialCharPassword(String specialpassword) {
+        String pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$";
+        if(Pattern.matches(pattern, specialpassword)) {
             System.out.println("Password  is Valid");
         }else {
             System.out.println("Password is Invalid");
