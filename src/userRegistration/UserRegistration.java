@@ -84,7 +84,7 @@ public class UserRegistration {
         }
     }
     public void SpecialCharPassword(String specialpassword) {
-        String pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$";
+        String pattern = "(?=.*[A-Z])(?=.*[0-9])(?=.*[!?#$]{1})[a-zA-Z0-9!?#$]{8,32}$";
         if(Pattern.matches(pattern, specialpassword)) {
             System.out.println("Password  is Valid");
         }else {
