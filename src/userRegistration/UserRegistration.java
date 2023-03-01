@@ -14,6 +14,10 @@ public class UserRegistration {
         System.out.println("Enter Your Last Name");
         String lastName = scanner.next();
         userregistration.validLastName(lastName);
+        System.out.println();
+        System.out.println("Enter Your Email ID");
+        String emailID = scanner.next();
+        userregistration.validEmail( emailID);
     }
     public void validFirstName(String firstName) {
         String pattern ="^[A-Z]{1}[ a-z]{2,25}$";
@@ -31,6 +35,12 @@ public class UserRegistration {
             System.out.println("Last name is Invalid");
         }
     }
+    public void validEmail(String emailID) {
+        String pattern = "[a-zA-z]+(\\.([A-Za-z]*))+@[A-Za-z]+(\\.(([a-z]{2})*))+(\\.(([a-z]{2})*))$";
+        if(Pattern.matches(pattern, emailID)) {
+            System.out.println("Email ID is Valid");
+        } else {
+            System.out.println("Email ID is Invalid");
+        }
+    }
 }
-
-
