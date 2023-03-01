@@ -23,9 +23,13 @@ public class UserRegistration {
         String mobileNo = scanner.next();
         userregistration.validMobileFormat(mobileNo);
         System.out.println();
-        System.out.println("\nEnter Password");
+        System.out.println("Enter Password");
         String password = scanner.next();
         userregistration.validPassword(password);
+        System.out.println();
+        System.out.println("Enter Password");
+        String Upppassword = scanner.next();
+        userregistration.UppervalidPassword(Upppassword);
     }
     public void validFirstName(String firstName) {
         String pattern ="^[A-Z]{1}[ a-z]{2,25}$";
@@ -62,6 +66,14 @@ public class UserRegistration {
     public void validPassword(String password) {
         String pattern = "[a-zA-z]{8,32}$";
         if(Pattern.matches(pattern, password)) {
+            System.out.println("Password  is Valid");
+        }else {
+            System.out.println("Password is Invalid");
+        }
+    }
+    public void UppervalidPassword(String Upppassword) {
+        String pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$";
+        if(Pattern.matches(pattern, Upppassword)) {
             System.out.println("Password  is Valid");
         }else {
             System.out.println("Password is Invalid");
